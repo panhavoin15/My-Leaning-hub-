@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>🚀 My Learning Hub</h1>
+    <p>Your personal learning journey starts here.</p>
+</header>
+
+<main>
+    <section class="card welcome">
+        <h2>Welcome Back!</h2>
+        <p>Set goals, complete tasks, and track your growth.</p>
+    </section>
+
+    <section class="card">
+        <h2>➕ Add a Learning Task</h2>
+        <form id="task-form" class="task-form" autocomplete="off">
+            <input type="text" id="task-input" placeholder="e.g. Finish JavaScript chapter 3" maxlength="100" required>
+            <select id="category-select" aria-label="Category">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript" selected>JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section class="card progress-section">
+        <h2>📊 My Progress Dashboard</h2>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Total Tasks</h3>
+                <p class="stat-number" id="total-count">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Completed</h3>
+                <p class="stat-number" id="completed-count">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Remaining</h3>
+                <p class="stat-number" id="remaining-count">0</p>
+            </div>
+        </div>
+
+        <h3 class="progress-title">Overall Progress</h3>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text" id="progress-text">0% completed</p>
+        <p class="message" id="message"></p>
+    </section>
+
+    <section class="card">
+        <h2>📈 Learning Insights</h2>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>🔥 Day Streak</h3>
+                <p class="stat-number" id="streak-count">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Done Today</h3>
+                <p class="stat-number" id="today-count">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Last 7 Days</h3>
+                <p class="stat-number" id="week-count">0</p>
+            </div>
+        </div>
+
+        <h3 class="progress-title">Tasks completed per day</h3>
+        <div class="week-chart" id="week-chart"></div>
+
+        <h3 class="progress-title category-title">Progress by category</h3>
+        <div class="category-progress" id="category-progress"></div>
+    </section>
+
+    <section class="card">
+        <div class="list-header">
+            <h2>📝 My Tasks</h2>
+            <div class="filters">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="active">Active</button>
+                <button class="filter" data-filter="done">Done</button>
+            </div>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty-state">No tasks yet. Add your first one above!</p>
+
+        <button id="clear-completed" class="clear-btn">Clear completed</button>
+    </section>
+</main>
+
+<footer>
+    <p>Keep going. Small steps every day add up. 💪</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+ 
